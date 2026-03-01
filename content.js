@@ -9,7 +9,7 @@ const CONTENT = {
     title: "Chinmay Kadli — Operations & Project Manager",
     description: "Portfolio of Chinmay Kadli — Operations, Project Management, and Strategy professional based in Dublin, Ireland. MSc Engineering Management, UCD.",
     ogImage: "og-image.png",
-    url: "https://chinmay-kadli.netlify.app",
+    url: "https://chinmaykadli.com",
   },
 
   // ===== HERO =====
@@ -22,7 +22,7 @@ const CONTENT = {
     ctaDownload: "Download CV",
     ctaContact: "Contact Me",
     ctaLinkedin: "LinkedIn",
-    linkedinUrl: "https://linkedin.com/in/chinmaykadli",
+    linkedinUrl: "https://linkedin.com/in/chinmay-kadli",
   },
 
   // ===== METRICS =====
@@ -141,7 +141,7 @@ const CONTENT = {
           { before: "$0", after: "$2M", label: "Seed Round" },
         ],
       },
-      takeaway: "Give me chaos and I'll leave a working system.",
+      takeaway: "Give me chaos, and I'll leave a working system.",
       challenge: {
         question: "Alright — what did you actually change that drove the 4x jump?",
         context: "This is the question I want you to ask me in an interview.",
