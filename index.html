@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chinmay Kadli — Operations & Project Manager</title>
+<meta name="description" content="Portfolio of Chinmay Kadli — Operations, Project Management, and Strategy professional based in Dublin, Ireland. MSc Engineering Management, UCD.">
+<meta property="og:title" content="Chinmay Kadli — Operations & Project Manager">
+<meta property="og:description" content="Project Management · Operations · Strategy & Delivery. Based in Dublin, Ireland.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chinmay-kadli.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!-- Prevent flash of wrong theme -->
+<script>
+  try {
+    const t = localStorage.getItem('theme');
+    if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches))
+      document.documentElement.setAttribute('data-theme', 'dark');
+  } catch(e) {}
+</script>
+</head>
+<body data-speed="3min">
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Chinmay Kadli</a>
+  <div class="nav-right">
+    <a href="#cases" class="hide-mobile">Case Studies</a>
+    <a href="#about" class="hide-mobile">About</a>
+    <a href="#fit" class="hide-mobile">Fit</a>
+    <a href="#contact" class="hide-mobile">Contact</a>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-speed">
+      <div class="speed-toggle">
+        <button class="speed-btn" onclick="setSpeed('30s')">30 seconds</button>
+        <button class="speed-btn active" onclick="setSpeed('3min')">3 minutes</button>
+        <button class="speed-btn" onclick="setSpeed('deep')">Deep dive</button>
+      </div>
+    </div>
+    <h1 class="hero-name">Chinmay Kadli</h1>
+    <p class="hero-role">Operations & Project Manager — Dublin, Ireland</p>
+    <p class="hero-tagline">Drop me into chaos. I'll build the playbook.</p>
+    <p class="hero-anchor">Project Management <span>·</span> Operations <span>·</span> Strategy & Delivery <span>·</span> Process Design</p>
+    <div class="hero-stamp">Stamp 1G — Full work authorisation, no sponsorship required</div>
+    <br><br>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-secondary">Contact Me</a>
+      <button class="btn-primary" onclick="openModal()">Download CV</button>
+      <a href="https://linkedin.com/in/chinmaykadli" class="btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- METRICS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">The Numbers</div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Revenue Growth</div>
+        <div class="metric-value">5x</div>
+        <div class="metric-context">in 4 months</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">States Scaled</div>
+        <div class="metric-value">5</div>
+        <div class="metric-context">from 1 court</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Seed Round</div>
+        <div class="metric-value">$2M</div>
+        <div class="metric-context">3one4 Capital</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Thesis Grade</div>
+        <div class="metric-value">A-</div>
+        <div class="metric-context">Analog Devices</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- PROOF WALL -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">I Build From Zero</div>
+    <div class="proof-wall">
+      <div class="proof-cell">
+        <div class="proof-label">NyayaNidhi</div>
+        <div class="proof-before">1 court, no processes, employee #3</div>
+        <span class="proof-arrow">———→</span>
+        <div class="proof-after"><span class="hl">5 states</span>, $24K/month, $2M funded, team of 9</div>
+      </div>
+      <div class="proof-cell">
+        <div class="proof-label">What The Froot</div>
+        <div class="proof-before">An idea, $340, and the zeal to build during COVID</div>
+        <span class="proof-arrow">———→</span>
+        <div class="proof-after"><span class="hl">$27K revenue</span>, team of 8, 10+ brand marketplace</div>
+      </div>
+      <div class="proof-cell">
+        <div class="proof-label">ADI Thesis</div>
+        <div class="proof-before">A research question about fab shutdowns</div>
+        <span class="proof-arrow">———→</span>
+        <div class="proof-after"><span class="hl">9 fabs simulated</span>, dual-model framework, graded A-</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <div class="about-content">
+      <p class="about-text"><strong>I'm Chinmay Kadli.</strong> I keep walking into "no playbook" situations and building one. I've scaled a legal-tech operation from one court to five Indian states, built a hub-and-spoke delivery model, and grew revenue from $6K to $24K/month in four months.</p>
+      <p class="about-text">I also co-founded a D2C food brand from scratch and modelled semiconductor supply chain disruptions with Analog Devices for my MSc thesis at UCD.</p>
+      <p class="about-text">I navigate ADHD, which means I've had to build real systems for focus, prioritisation, and execution earlier than most. That discipline is now how I work — and it's why I'm drawn to turning messy environments into something that runs.</p>
+      <p class="about-text">I'm in Dublin now — looking for a team with real problems to solve and zero fear of messy starts.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider speed-3min">
+
+<!-- CASE STUDIES -->
+<section class="section speed-3min" id="cases">
+  <div class="container">
+    <div class="section-label">Case Studies</div>
+    <div class="case-cards">
+
+      <a href="case-study-nn.html" class="case-card">
+        <span class="case-ref">REF: NN-2025</span>
+        <div class="case-hook">One court to five states — without quality falling apart.</div>
+        <div class="case-tags">
+          <span class="tag-skill">Operations</span>
+          <span class="tag-skill">Agile</span>
+          <span class="tag-skill">AI/ML</span>
+          <span class="tag-skill">Process Design</span>
+          <span class="tag-skill">Stakeholder Mgmt</span>
+          <span class="tag-meta">11 months</span>
+          <span class="tag-meta">Team: 5→9</span>
+          <span class="tag-meta">Legal-Tech</span>
+        </div>
+        <div class="case-desc">Built a hub-and-spoke operating model to scale legal translation and drafting services across Indian states. Grew revenue 4x, redesigned AI architecture, and secured a ₹24L government tender.</div>
+        <span class="case-link">Read full case study →</span>
+      </a>
+
+      <a href="case-study-wtf.html" class="case-card">
+        <span class="case-ref">REF: WTF-2021</span>
+        <div class="case-hook">An idea, a pandemic, and a pivot — built into a 10-brand marketplace.</div>
+        <div class="case-tags">
+          <span class="tag-skill">Supply Chain</span>
+          <span class="tag-skill">E-commerce</span>
+          <span class="tag-skill">P&L</span>
+          <span class="tag-skill">Vendor Mgmt</span>
+          <span class="tag-skill">Co-founder</span>
+          <span class="tag-meta">13 months</span>
+          <span class="tag-meta">Team: 8</span>
+          <span class="tag-meta">D2C / FMCG</span>
+        </div>
+        <div class="case-desc">Co-founded a D2C health food brand during COVID. Managed end-to-end operations from supply chain to Shopify, cut costs 20%, and pivoted from single-brand to multi-brand marketplace with 10+ partners.</div>
+        <span class="case-link">Read full case study →</span>
+      </a>
+
+      <a href="case-study-adi.html" class="case-card">
+        <span class="case-ref">REF: ADI-2025</span>
+        <div class="case-hook">Nine fabs, two models — how shutdowns turn into backlogs.</div>
+        <div class="case-tags">
+          <span class="tag-skill">Simulation</span>
+          <span class="tag-skill">Supply Chain</span>
+          <span class="tag-skill">Data Analysis</span>
+          <span class="tag-skill">Risk Modelling</span>
+          <span class="tag-skill">Excel Solver</span>
+          <span class="tag-meta">3 months</span>
+          <span class="tag-meta">Team: 4</span>
+          <span class="tag-meta">Semiconductor</span>
+        </div>
+        <div class="case-desc">Built a dual-model decision support framework (Excel Solver + AnyLogic DES) to quantify semiconductor supply chain disruption impact across 9 fabrication plants and 4 disruption scenarios.</div>
+        <span class="case-link">Read full case study →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider speed-3min">
+
+<!-- DUBLIN FIT MATRIX -->
+<section class="section speed-3min" id="fit">
+  <div class="container">
+    <div class="section-label">Where I Fit</div>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>What I Bring</th>
+          <th>What I Want to Learn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pharma / MedTech</td>
+          <td>Scaling ops across regions, process design, SOP development, stakeholder management</td>
+          <td>Regulatory compliance, GxP frameworks, quality management systems</td>
+        </tr>
+        <tr>
+          <td>Semiconductor</td>
+          <td>Supply chain resilience modelling, simulation, data-driven decision support</td>
+          <td>Fab operations at scale, capacity planning, MRP systems</td>
+        </tr>
+        <tr>
+          <td>Tech / Enterprise</td>
+          <td>Startup speed, cross-functional execution, building teams and processes from zero</td>
+          <td>Enterprise-scale programme management, global operations</td>
+        </tr>
+        <tr>
+          <td>Consulting</td>
+          <td>End-to-end delivery, strategy-to-operations translation, founder-level ownership</td>
+          <td>Client delivery frameworks, structured problem-solving at scale</td>
+        </tr>
+        <tr>
+          <td>Startups / Scale-ups</td>
+          <td>Founder's office experience — built teams, processes, and revenue from zero, twice</td>
+          <td>Scaling past product-market fit, operational playbooks for growth stage</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="section-divider speed-3min">
+
+<!-- CONTACT -->
+<section class="section speed-3min" id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <div class="contact-text">
+      <h3>Let's talk.</h3>
+      <p>I'm actively looking for Operations, Project Management, and Strategy roles in Dublin. If you think there's a fit — or even if you're not sure — I'd rather have the conversation than not.</p>
+      <p style="font-size: 13px; color: var(--text3);">I respond within 24 hours.</p>
+      <div class="contact-links">
+        <a href="mailto:chinmay.kadli@email.com" class="contact-link">chinmay.kadli@email.com →</a>
+        <a href="https://linkedin.com/in/chinmaykadli" class="contact-link" target="_blank" rel="noopener">linkedin.com/in/chinmaykadli →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PEAK END -->
+<section class="peak-end">
+  <div class="container">
+    <p class="peak-statement">I build the playbook when there isn't one.</p>
+    <p class="peak-sub">Every role I've walked into started with nothing — no team, no process, no playbook. I built all three.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="openModal()">Download CV</button>
+      <a href="#contact" class="btn-secondary">Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-line">Built from scratch, not from a template. That's kind of my thing.</p>
+    <p class="footer-copy">© 2026 Chinmay Kadli. Operator's Field Manual.</p>
+  </div>
+</footer>
+
+<!-- CV MODAL -->
+<div class="modal-overlay" id="cvModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-title">Download my CV</div>
+    <div class="modal-subtitle">What role are you considering me for?</div>
+    <button class="modal-option" onclick="downloadCV('pm')">
+      <div class="opt-title">Project Management</div>
+      <div class="opt-desc">PM, Associate PM, Junior PM roles</div>
+    </button>
+    <button class="modal-option" onclick="downloadCV('ops')">
+      <div class="opt-title">Operations</div>
+      <div class="opt-desc">Operations Associate, Coordinator, Analyst roles</div>
+    </button>
+    <button class="modal-option" onclick="downloadCV('strategy')">
+      <div class="opt-title">Strategy & Operations</div>
+      <div class="opt-desc">Strategy, consulting, cross-functional roles</div>
+    </button>
+    <button class="modal-option" onclick="downloadCV('founders')">
+      <div class="opt-title">Founder's Office / Chief of Staff</div>
+      <div class="opt-desc">Startup, scale-up, founder-adjacent roles</div>
+    </button>
+    <button class="modal-close" onclick="closeModal()">Close · Press Esc</button>
+  </div>
+</div>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

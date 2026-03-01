@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADI Thesis Case Study — Chinmay Kadli</title>
+<meta name="description" content="How Chinmay Kadli modelled semiconductor fab shutdowns across 9 plants using Excel Solver and AnyLogic simulation for Analog Devices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{const t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Chinmay Kadli</a>
+  <div class="nav-right">
+    <a href="index.html#cases">All Cases</a>
+    <a href="index.html#contact" class="hide-mobile">Contact</a>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀</button>
+  </div>
+</nav>
+
+<section class="cs-hero">
+  <div class="container">
+    <a href="index.html#cases" class="cs-back">← Back to all case studies</a>
+    <h1 class="cs-title">ADI Thesis — Semiconductor Supply Chain Resilience</h1>
+    <p class="cs-hook">Nine fabs, two models — how shutdowns turn into backlogs.</p>
+    <div class="case-tags" style="margin-bottom: 20px;">
+      <span class="tag-skill">Simulation</span>
+      <span class="tag-skill">Supply Chain</span>
+      <span class="tag-skill">Data Analysis</span>
+      <span class="tag-skill">Risk Modelling</span>
+      <span class="tag-skill">Excel Solver</span>
+      <span class="tag-skill">AnyLogic</span>
+      <span class="tag-skill">Scenario Planning</span>
+    </div>
+    <div class="cs-meta">
+      <div class="cs-meta-item"><strong>Duration</strong>May 2025 – August 2025 (3 months)</div>
+      <div class="cs-meta-item"><strong>Role</strong>Research Team Member (MEngSc Applied Research Project)</div>
+      <div class="cs-meta-item"><strong>Team</strong>Team of 4 under Dr. Vincent Hargaden</div>
+      <div class="cs-meta-item"><strong>Industry</strong>Semiconductor / Supply Chain</div>
+      <div class="cs-meta-item"><strong>Tools</strong>Excel (Solver LP), AnyLogic DES, Scenario Analysis, KPI Design</div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="cs-section-title">What happens when a fab goes down?</h2>
+    <p class="cs-text">When a semiconductor fabrication plant shuts down unexpectedly, managers face cascading failures: die bank inventories drain, order backlogs spike, and recovery timelines remain unclear. Existing tools offered no fast, quantitative way to test which mitigation levers — buffers, capacity reallocation, surge production — actually work, and at what cost.</p>
+    <p class="cs-text">This project built two decision-support tools to give managers quantitative answers.</p>
+    <div class="cs-big-metric">
+      <div class="bm-value">9 fabs</div>
+      <div class="bm-label">modelled</div>
+      <div class="bm-context">3 chip types, 4 disruption scenarios</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="cs-section">
+  <div class="container">
+    <div class="section-label">The Approach</div>
+    <h2 class="cs-section-title">Dual-model framework</h2>
+    <p class="cs-text">We built a dual-model framework. The first model was an Excel Solver-based linear programme that minimised total cost across 9 fabrication plants and 3 chip types. It compared two allocation modes: fixed-mix (rule-based) versus minimum-cost (Solver-optimised), enabling instant what-if scenarios for cost attribution and capacity redistribution.</p>
+    <p class="cs-text">The second model was an AnyLogic discrete-event simulation modelling 9 fabs, 3 product families, die bank inventories, and order fulfilment over time. It captured week-by-week backlog dynamics, inventory depletion, and recovery trajectories — the things a spreadsheet can't show you.</p>
+    <p class="cs-text">We ran four categories of disruption scenarios: varying shutdown durations, critical node failures, multi-fab simultaneous shutdowns, and different restart production rates. Each scenario produced quantifiable fulfilment rates, cost impacts, and recovery timelines.</p>
+    <p class="cs-text">The team of 4 worked collaboratively — I contributed to both models and all scenario analysis. We presented findings directly to Analog Devices operations leadership.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="cs-section">
+  <div class="container">
+    <div class="section-label">Key Findings</div>
+    <h2 class="cs-section-title">What the models revealed</h2>
+    <div class="cs-metrics-grid">
+      <div class="cs-metric-pair"><div class="cs-mp-label">Fulfilment (high restart)</div><div class="cs-mp-before">—</div><div class="cs-mp-after">98%</div></div>
+      <div class="cs-metric-pair"><div class="cs-mp-label">Fulfilment (low restart)</div><div class="cs-mp-before">—</div><div class="cs-mp-after">58%</div></div>
+      <div class="cs-metric-pair"><div class="cs-mp-label">Cost Saved (optimised)</div><div class="cs-mp-before">—</div><div class="cs-mp-after">~12%</div></div>
+      <div class="cs-metric-pair"><div class="cs-mp-label">Optimal Buffer</div><div class="cs-mp-before">—</div><div class="cs-mp-after">2-3 wk</div></div>
+    </div>
+
+    <h3 class="cs-section-title" style="margin-top: 32px; font-size: 17px;">Scenario Insights</h3>
+    <ul class="cs-insights">
+      <li>Fab 3 and Fab 5 identified as critical vulnerability nodes — their loss caused structural shortages the network couldn't compensate for.</li>
+      <li>Simultaneous outages at two fabs proved worse than a single longer shutdown — simultaneity matters more than duration.</li>
+      <li>Simply restarting a fab is insufficient. The rate of post-restart production determines whether recovery occurs at all (98% vs 58%).</li>
+      <li>Inventory buffers provide non-linear protection. Optimal sizing is 2-3 weeks of demand coverage — beyond that, diminishing returns.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="cs-section">
+  <div class="container">
+    <div class="section-label">Strategic Recommendations</div>
+    <h2 class="cs-section-title">What we told ADI leadership</h2>
+    <ol class="cs-recs">
+      <li>Size die bank buffers at 2-3 weeks of demand coverage — balancing holding cost against fulfilment protection.</li>
+      <li>Pre-qualify backup capacity for critical nodes (Fab 3, Fab 5) with pre-negotiated supplier contracts.</li>
+      <li>Plan surge production rates post-restart — higher than baseline to clear accumulated backlog.</li>
+      <li>Stress-test for simultaneous multi-fab disruptions, not just longer single ones.</li>
+      <li>Deploy fab-specific control towers for real-time visibility and proactive reallocation.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="cs-section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cs-takeaway">"I can model the problem before it becomes a crisis."</div>
+    <div class="cs-challenge">
+      <div class="cs-challenge-label">Challenge Me On This</div>
+      <div class="cs-challenge-q">"Which assumption worried you most — and how did you sanity-check it?"</div>
+      <div class="cs-challenge-ctx">This is the question I want you to ask me in an interview.</div>
+    </div>
+  </div>
+</section>
+
+<section class="peak-end" style="padding: 48px 0;">
+  <div class="container">
+    <div class="hero-cta">
+      <a href="index.html#cases" class="btn-secondary">← All Case Studies</a>
+      <button class="btn-primary" onclick="openModal()">Download CV</button>
+      <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-line">Built from scratch, not from a template. That's kind of my thing.</p>
+    <p class="footer-copy">© 2026 Chinmay Kadli. Operator's Field Manual.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="cvModal" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-title">Download my CV</div>
+    <div class="modal-subtitle">What role are you considering me for?</div>
+    <button class="modal-option" onclick="downloadCV('pm')"><div class="opt-title">Project Management</div><div class="opt-desc">PM, Associate PM, Junior PM roles</div></button>
+    <button class="modal-option" onclick="downloadCV('ops')"><div class="opt-title">Operations</div><div class="opt-desc">Operations Associate, Coordinator, Analyst roles</div></button>
+    <button class="modal-option" onclick="downloadCV('strategy')"><div class="opt-title">Strategy & Operations</div><div class="opt-desc">Strategy, consulting, cross-functional roles</div></button>
+    <button class="modal-option" onclick="downloadCV('founders')"><div class="opt-title">Founder's Office / Chief of Staff</div><div class="opt-desc">Startup, scale-up, founder-adjacent roles</div></button>
+    <button class="modal-close" onclick="closeModal()">Close · Press Esc</button>
+  </div>
+</div>
+
+<script src="content.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
