@@ -27,7 +27,7 @@ const CONTENT = {
 
   // ===== METRICS =====
   metrics: [
-    { label: "Revenue Growth", value: "5x", context: "in 4 months" },
+    { label: "Revenue Growth", value: "4x", context: "in 4 months" },
     { label: "States Scaled", value: "5", context: "from 1 court" },
     { label: "Seed Round", value: "$2M", context: "3one4 Capital" },
     { label: "Thesis Grade", value: "A-", context: "Analog Devices" },
