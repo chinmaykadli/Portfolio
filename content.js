@@ -298,8 +298,8 @@ const CONTENT = {
     options: [
       { id: "pm", title: "Project Management", desc: "PM, Associate PM, Junior PM roles", file: "Chinmay_Kadli_CV_PM.pdf" },
       { id: "ops", title: "Operations", desc: "Operations Associate, Coordinator, Analyst roles", file: "Chinmay_Kadli_CV_Ops.pdf" },
-      { id: "strategy", title: "Strategy & Operations", desc: "Strategy, consulting, cross-functional roles", file: "Chinmay_Kadli_CV_Agency.pdf" },
-      { id: "founders", title: "Founder's Office / Chief of Staff", desc: "Startup, scale-up, founder-adjacent roles", file: "Chinmay_Kadli_CV_Ops.pdf" },
+      { id: "strategy", title: "Strategy & Operations", desc: "Strategy, consulting, cross-functional roles", file: "Chinmay_Kadli_CV_PM_Ops.pdf" },
+      { id: "founders", title: "Founder's Office / Chief of Staff", desc: "Startup, scale-up, founder-adjacent roles", file: "Chinmay_Kadli_CV_Founders_Office.pdf" },
     ],
   },
 
