@@ -7,7 +7,7 @@ const CONTENT = {
   // ===== SITE META =====
   meta: {
     title: "Chinmay Kadli — Operations & Project Manager",
-    description: "Portfolio of Chinmay Kadli — Operations, Project Management, and Strategy professional based in Dublin, Ireland. MSc Engineering Management, UCD.",
+    description: "Chinmay Kadli — Operations & Project Manager based in Dublin, Ireland. Stamp 1G work authorisation. MSc Engineering Management, UCD. Strategy, delivery, and process design.",
     ogImage: "og-image.png",
     url: "https://chinmaykadli.com",
   },
@@ -76,7 +76,7 @@ const CONTENT = {
       hook: "One court to five states — without quality falling apart.",
       skillTags: ["Operations", "Agile", "AI/ML", "Process Design", "Stakeholder Mgmt"],
       metaTags: ["11 months", "Team: 5→9", "Legal-Tech"],
-      desc: "Built a hub-and-spoke operating model to scale legal translation and drafting services across Indian states. Grew revenue 4x, redesigned AI architecture, and secured a ₹24L government tender.",
+      desc: "Built a hub-and-spoke operating model to scale legal translation and drafting services across Indian states. Grew revenue 4x, redesigned AI architecture, and secured a ~$29K government tender.",
       link: "case-study-nn.html",
       linkText: "Read full case study →",
     },
@@ -115,14 +115,14 @@ const CONTENT = {
       tags: ["Operations", "Agile", "AI/ML", "Process Design", "Stakeholder Mgmt", "Team Building", "Sprint Planning", "SOP Development"],
       before: {
         heading: "The Before",
-        text: "NyayaNidhi was a 3-person AI legal-tech startup operating in one High Court in Bangalore. There were no standard processes, no SOPs, no sprint structure. The AI translation engine existed but had a 90% accuracy rate — not good enough for legal documents where a single error can change a court ruling. Revenue was $6K/month. I joined as employee #3.",
-        metric: { value: "$6K", label: "monthly revenue", context: "1 court, 0 SOPs, 90% accuracy" },
+        text: "NyayaNidhi was a 3-person AI legal-tech startup operating in one High Court in Bangalore. There were no standard processes, no SOPs, no sprint structure. The AI translation engine existed but had an 80% accuracy rate — not good enough for legal documents where a single error can change a court ruling. Revenue was $6K/month. I joined as employee #3.",
+        metric: { value: "$6K", label: "monthly revenue", context: "1 court, 0 SOPs, 80% accuracy" },
       },
       messyMiddle: {
         heading: "The Messy Middle",
         paragraphs: [
           "The first thing I did was build a hub-and-spoke operating model. The hub handled quality control, training, and AI oversight. Each spoke was a state-level delivery team — translators, proofreaders, and a local coordinator who understood regional court formats and legal terminology.",
-          "I hired and trained 5 proofreaders, built onboarding SOPs, created error taxonomies for legal translations, and set up a QC process that sampled 10% of pages (100% for new translators). This pushed AI-assisted accuracy from 90% to 98%.",
+          "I hired and trained 5 proofreaders, built onboarding SOPs, created error taxonomies for legal translations, and set up a QC process that sampled 10% of pages (100% for new translators). This pushed AI-assisted accuracy from 80% to 90%.",
           "Simultaneously, I was doing court visits — physically going to High Courts in Maharashtra, Gujarat, and other states to pitch the translation and drafting services to lawyers and judges. Each state had different formats, different legal conventions, different stakeholder expectations.",
           "I redesigned the AI architecture from a single-agent system to a multi-agent pipeline — separating translation, proofreading, formatting, and QC into distinct stages. This enabled 90% automation while maintaining the accuracy standards.",
           "I launched a new drafting service across 10 district courts with sub-3-hour turnaround. Built sprint boards in Notion, ran weekly ops reviews, set up KPI dashboards in Power BI, and managed the DC/AC government pilot that scaled from 30 to 100 cases/month.",
@@ -135,8 +135,8 @@ const CONTENT = {
         metrics: [
           { before: "$6K/month", after: "$24K/month", label: "Revenue" },
           { before: "1 court", after: "5 states", label: "Coverage" },
-          { before: "90%", after: "98%", label: "AI Accuracy" },
-          { before: "0", after: "₹24L", label: "Govt Tender" },
+          { before: "80%", after: "90%", label: "AI Accuracy" },
+          { before: "0", after: "~$29K", label: "Govt Tender" },
           { before: "3 people", after: "Team of 9", label: "Team Size" },
           { before: "$0", after: "$2M", label: "Seed Round" },
         ],
@@ -161,7 +161,7 @@ const CONTENT = {
       tags: ["Supply Chain", "E-commerce", "P&L", "Vendor Mgmt", "Co-founder", "Brand Building", "Team Building"],
       before: {
         heading: "The Before",
-        text: "COVID lockdown in Mangalore, India. My co-founder Chakshu had an idea for a health food brand. We had $340 (₹20,000), zero industry experience, and the drive to build something rather than sit idle. No supply chain, no brand, no customers, no team.",
+        text: "COVID lockdown in India and all across the globe. My co-founder Chakshu had an idea for a health food brand. We had $340 (₹20,000), zero industry experience, and the drive to build something rather than sit idle. No supply chain, no brand, no customers, no team.",
         metric: { value: "$340", label: "starting capital", context: "0 customers, 0 team, 0 supply chain" },
       },
       messyMiddle: {
