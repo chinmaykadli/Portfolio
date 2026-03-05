@@ -21,6 +21,7 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
   --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
   --noise-opacity: 0.40;
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }
 [data-theme="dark"] {
   --bg: #121212;
@@ -40,6 +41,7 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
   --shadow-lg: 0 8px 24px rgba(0,0,0,0.3);
   --noise-opacity: 0.15;
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }
 
 /* ===== RESET ===== */
@@ -55,6 +57,37 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+}
+
+/* ===== SKIP LINK ===== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  text-decoration: none;
+  z-index: 999;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== FOCUS RINGS ===== */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 2px;
 }
 
 /* ===== NOISE GRAIN TEXTURE ===== */
@@ -846,11 +879,56 @@ hr.speed-3min, hr.speed-deep { display: none; }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .proof-wall { grid-template-columns: 1fr; }
   .nav-right a.hide-mobile { display: none; }
-  .matrix-table { font-size: 12px; }
-  .matrix-table thead th { font-size: 9px; padding: 8px 10px; }
-  .matrix-table tbody td { padding: 10px; }
   .cs-title { font-size: 26px; }
   .cs-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Dublin Fit Matrix — cards on mobile */
+  .matrix-table,
+  .matrix-table thead,
+  .matrix-table tbody,
+  .matrix-table tr,
+  .matrix-table td,
+  .matrix-table th {
+    display: block;
+  }
+  .matrix-table thead { display: none; }
+  .matrix-table tbody tr {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .matrix-table tbody td {
+    border-bottom: none;
+    padding: 4px 0;
+  }
+  .matrix-table tbody td:first-child {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    white-space: normal;
+  }
+  .matrix-table tbody td:nth-child(2)::before {
+    content: 'What I Bring: ';
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text3);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .matrix-table tbody td:nth-child(3)::before {
+    content: 'What I Want to Learn: ';
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text3);
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
 }
 @media (max-width: 480px) {
   .hero-name { font-size: 30px; }
@@ -868,7 +946,7 @@ hr.speed-3min, hr.speed-deep { display: none; }
 
 /* ===== PRINT ===== */
 @media print {
-  .nav, .scroll-progress, .speed-toggle, .theme-toggle, .modal-overlay { display: none !important; }
+  .nav, .scroll-progress, .speed-toggle, .theme-toggle, .modal-overlay, .skip-link { display: none !important; }
   body::after { display: none; }
   .speed-3min, .speed-deep { display: block !important; }
   body { background: #fff; color: #000; }
