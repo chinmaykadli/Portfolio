@@ -4,12 +4,35 @@
 <meta charset="UTF-8"><link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chinmay Kadli — Operations & Project Manager</title>
-<meta name="description" content="Portfolio of Chinmay Kadli — Operations, Project Management, and Strategy professional based in Dublin, Ireland. MSc Engineering Management, UCD.">
+<meta name="description" content="Chinmay Kadli — Operations & Project Manager based in Dublin, Ireland. Stamp 1G work authorisation. MSc Engineering Management, UCD. Strategy, delivery, and process design.">
+<link rel="canonical" href="https://chinmaykadli.com/">
 <meta property="og:title" content="Chinmay Kadli — Operations & Project Manager">
-<meta property="og:description" content="Project Management · Operations · Strategy & Delivery. Based in Dublin, Ireland.">
+<meta property="og:description" content="Drop me into chaos. I'll build the playbook. Operations & Project Manager in Dublin, Ireland.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chinmaykadli.com">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chinmay Kadli — Operations & Project Manager">
+<meta name="twitter:description" content="Drop me into chaos. I'll build the playbook. Operations & Project Manager in Dublin, Ireland.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Chinmay BS Kadli",
+  "url": "https://chinmaykadli.com",
+  "jobTitle": "Operations & Project Manager",
+  "sameAs": ["https://linkedin.com/in/chinmay-kadli"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University College Dublin"
+  },
+  "knowsAbout": ["Project Management", "Operations Management", "Strategy & Delivery", "Process Design", "Supply Chain Management"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dublin",
+    "addressCountry": "IE"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" as="style">
@@ -26,28 +49,31 @@
 </head>
 <body data-speed="3min">
 
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- NAV -->
-<nav class="nav">
+<nav class="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-brand">Chinmay Kadli</a>
   <div class="nav-right">
     <a href="#cases" class="hide-mobile">Case Studies</a>
     <a href="#about" class="hide-mobile">About</a>
     <a href="#fit" class="hide-mobile">Fit</a>
     <a href="#contact" class="hide-mobile">Contact</a>
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">☀</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">☀</button>
   </div>
 </nav>
+
+<main id="main-content">
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-speed">
-      <div class="speed-toggle">
-        <button class="speed-btn" onclick="setSpeed('30s')">30 seconds</button>
-        <button class="speed-btn active" onclick="setSpeed('3min')">3 minutes</button>
-        <button class="speed-btn" onclick="setSpeed('deep')">Deep dive</button>
+      <div class="speed-toggle" role="tablist" aria-label="Content depth">
+        <button class="speed-btn" role="tab" aria-selected="false" id="tab-30s" onclick="setSpeed('30s')">30 seconds</button>
+        <button class="speed-btn active" role="tab" aria-selected="true" id="tab-3min" onclick="setSpeed('3min')">3 minutes</button>
+        <button class="speed-btn" role="tab" aria-selected="false" id="tab-deep" onclick="setSpeed('deep')">Deep dive</button>
       </div>
     </div>
     <h1 class="hero-name">Chinmay Kadli</h1>
@@ -59,7 +85,7 @@
     <div class="hero-cta">
       <a href="#contact" class="btn-secondary">Contact Me</a>
       <button class="btn-primary" onclick="openModal()">Download CV</button>
-      <a href="https://linkedin.com/in/chinmay-kadli" class="btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://linkedin.com/in/chinmay-kadli" class="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </section>
@@ -147,7 +173,7 @@
     <div class="section-label">Case Studies</div>
     <div class="case-cards">
 
-      <a href="case-study-nn.html" class="case-card">
+      <a href="case-study-nn.html" class="case-card" aria-label="Read full NyayaNidhi case study: One court to five states">
         <span class="case-ref">REF: NN-2025</span>
         <div class="case-hook">One court to five states — without quality falling apart.</div>
         <div class="case-tags">
@@ -160,11 +186,11 @@
           <span class="tag-meta">Team: 5→9</span>
           <span class="tag-meta">Legal-Tech</span>
         </div>
-        <div class="case-desc">Built a hub-and-spoke operating model to scale legal translation and drafting services across Indian states. Grew revenue 4x, redesigned AI architecture, and secured a ₹24L government tender.</div>
+        <div class="case-desc">Built a hub-and-spoke operating model to scale legal translation and drafting services across Indian states. Grew revenue 4x, redesigned AI architecture, and secured a ~$29K government tender.</div>
         <span class="case-link">Read full case study →</span>
       </a>
 
-      <a href="case-study-wtf.html" class="case-card">
+      <a href="case-study-wtf.html" class="case-card" aria-label="Read full What The Froot case study: D2C brand from zero">
         <span class="case-ref">REF: WTF-2021</span>
         <div class="case-hook">An idea, a pandemic, and a pivot — built into a 10-brand marketplace.</div>
         <div class="case-tags">
@@ -181,7 +207,7 @@
         <span class="case-link">Read full case study →</span>
       </a>
 
-      <a href="case-study-adi.html" class="case-card">
+      <a href="case-study-adi.html" class="case-card" aria-label="Read full ADI thesis case study: Semiconductor supply chain simulation">
         <span class="case-ref">REF: ADI-2025</span>
         <div class="case-hook">Nine fabs, two models — how shutdowns turn into backlogs.</div>
         <div class="case-tags">
@@ -218,29 +244,29 @@
       </thead>
       <tbody>
         <tr>
-          <td>Pharma / MedTech</td>
-          <td>Scaling ops across regions, process design, SOP development, stakeholder management</td>
-          <td>Regulatory compliance, GxP frameworks, quality management systems</td>
+          <td data-label="Sector">Pharma / MedTech</td>
+          <td data-label="What I Bring">Scaling ops across regions, process design, SOP development, stakeholder management</td>
+          <td data-label="What I Want to Learn">Regulatory compliance, GxP frameworks, quality management systems</td>
         </tr>
         <tr>
-          <td>Semiconductor</td>
-          <td>Supply chain resilience modelling, simulation, data-driven decision support</td>
-          <td>Fab operations at scale, capacity planning, MRP systems</td>
+          <td data-label="Sector">Semiconductor</td>
+          <td data-label="What I Bring">Supply chain resilience modelling, simulation, data-driven decision support</td>
+          <td data-label="What I Want to Learn">Fab operations at scale, capacity planning, MRP systems</td>
         </tr>
         <tr>
-          <td>Tech / Enterprise</td>
-          <td>Startup speed, cross-functional execution, building teams and processes from zero</td>
-          <td>Enterprise-scale programme management, global operations</td>
+          <td data-label="Sector">Tech / Enterprise</td>
+          <td data-label="What I Bring">Startup speed, cross-functional execution, building teams and processes from zero</td>
+          <td data-label="What I Want to Learn">Enterprise-scale programme management, global operations</td>
         </tr>
         <tr>
-          <td>Consulting</td>
-          <td>End-to-end delivery, strategy-to-operations translation, founder-level ownership</td>
-          <td>Client delivery frameworks, structured problem-solving at scale</td>
+          <td data-label="Sector">Consulting</td>
+          <td data-label="What I Bring">End-to-end delivery, strategy-to-operations translation, founder-level ownership</td>
+          <td data-label="What I Want to Learn">Client delivery frameworks, structured problem-solving at scale</td>
         </tr>
         <tr>
-          <td>Startups / Scale-ups</td>
-          <td>Founder's office experience — built teams, processes, and revenue from zero, twice</td>
-          <td>Scaling past product-market fit, operational playbooks for growth stage</td>
+          <td data-label="Sector">Startups / Scale-ups</td>
+          <td data-label="What I Bring">Founder's office experience — built teams, processes, and revenue from zero, twice</td>
+          <td data-label="What I Want to Learn">Scaling past product-market fit, operational playbooks for growth stage</td>
         </tr>
       </tbody>
     </table>
@@ -258,12 +284,14 @@
       <p>I'm actively looking for Operations, Project Management, and Strategy roles in Dublin. If you think there's a fit — or even if you're not sure — I'd rather have the conversation than not.</p>
       <p style="font-size: 13px; color: var(--text3);">I respond within 24 hours.</p>
       <div class="contact-links">
-        <a href="mailto:chinmay.kadli@gmail.com" class="contact-link">chinmay.kadli@gmail.com →</a>
-        <a href="https://linkedin.com/in/chinmay-kadli" class="contact-link" target="_blank" rel="noopener">linkedin.com/in/chinmay-kadli →</a>
+        <a class="contact-link" id="emailLink" data-u="chinmay.kadli" data-d="gmail.com" href="#">Loading email...</a>
+        <a href="https://linkedin.com/in/chinmay-kadli" class="contact-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/chinmay-kadli →</a>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- PEAK END -->
 <section class="peak-end">
@@ -286,10 +314,10 @@
 </footer>
 
 <!-- CV MODAL -->
-<div class="modal-overlay" id="cvModal" onclick="closeModal(event)">
+<div class="modal-overlay" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalSubtitle" aria-hidden="true" onclick="closeModal(event)">
   <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-title">Download my CV</div>
-    <div class="modal-subtitle">What role are you considering me for?</div>
+    <div class="modal-title" id="modalTitle">Download my CV</div>
+    <div class="modal-subtitle" id="modalSubtitle">What role are you considering me for?</div>
     <button class="modal-option" onclick="downloadCV('pm')">
       <div class="opt-title">Project Management</div>
       <div class="opt-desc">PM, Associate PM, Junior PM roles</div>
@@ -312,6 +340,7 @@
 
 <script src="content.js"></script>
 <script src="main.js"></script>
+<script src="tracking.js"></script>
 <script src="konami.js"></script>
 </body>
 </html>
