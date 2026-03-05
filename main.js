@@ -1,5 +1,5 @@
 // ===== PORTFOLIO — MAIN.JS =====
-// All interactions, theme management, analytics
+// All interactions, theme management, accessibility
 
 // ===== THEME =====
 function toggleTheme() {
@@ -7,7 +7,10 @@ function toggleTheme() {
   const newTheme = isDark ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
   const toggle = document.getElementById('themeToggle');
-  if (toggle) toggle.textContent = isDark ? '☀' : '☽';
+  if (toggle) {
+    toggle.textContent = isDark ? '☀' : '☽';
+    toggle.setAttribute('aria-label', isDark ? 'Toggle dark mode' : 'Toggle light mode');
+  }
   try { localStorage.setItem('theme', newTheme); } catch(e) {}
 }
 
@@ -18,7 +21,10 @@ function initTheme() {
   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.setAttribute('data-theme', 'dark');
     const toggle = document.getElementById('themeToggle');
-    if (toggle) toggle.textContent = '☽';
+    if (toggle) {
+      toggle.textContent = '☽';
+      toggle.setAttribute('aria-label', 'Toggle light mode');
+    }
   }
 }
 
@@ -26,35 +32,73 @@ function initTheme() {
 function setSpeed(speed) {
   document.body.setAttribute('data-speed', speed);
   const btns = document.querySelectorAll('.speed-btn');
-  btns.forEach(b => b.classList.remove('active'));
-  if (speed === '30s' && btns[0]) btns[0].classList.add('active');
-  if (speed === '3min' && btns[1]) btns[1].classList.add('active');
-  if (speed === 'deep' && btns[2]) btns[2].classList.add('active');
+  btns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  if (speed === '30s' && btns[0]) { btns[0].classList.add('active'); btns[0].setAttribute('aria-selected', 'true'); }
+  if (speed === '3min' && btns[1]) { btns[1].classList.add('active'); btns[1].setAttribute('aria-selected', 'true'); }
+  if (speed === 'deep' && btns[2]) { btns[2].classList.add('active'); btns[2].setAttribute('aria-selected', 'true'); }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // ===== CV DOWNLOAD MODAL =====
+let _modalTrigger = null;
+
 function openModal() {
   const modal = document.getElementById('cvModal');
-  if (modal) modal.classList.add('open');
+  if (!modal) return;
+  _modalTrigger = document.activeElement;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  // Focus first option
+  const firstOption = modal.querySelector('.modal-option');
+  if (firstOption) firstOption.focus();
+  // Add focus trap
+  modal.addEventListener('keydown', _trapModalFocus);
 }
 
 function closeModal(e) {
   const modal = document.getElementById('cvModal');
-  if (!e || e.target === modal) {
-    if (modal) modal.classList.remove('open');
+  if (!modal) return;
+  if (e && e.target !== modal && e.type === 'click') return;
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.removeEventListener('keydown', _trapModalFocus);
+  // Return focus to trigger
+  if (_modalTrigger) {
+    _modalTrigger.focus();
+    _modalTrigger = null;
+  }
+}
+
+function _trapModalFocus(e) {
+  if (e.key === 'Escape') { closeModal(); return; }
+  if (e.key !== 'Tab') return;
+  const modal = document.querySelector('.modal');
+  if (!modal) return;
+  const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  if (focusable.length === 0) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
   }
 }
 
 function downloadCV(type) {
-  // Log for analytics
+  // Track for analytics
   console.log('[CV Download]', type, new Date().toISOString());
+  if (typeof window._trackCV === 'function') window._trackCV(type);
 
   // Find the matching file from CONTENT
   if (typeof CONTENT !== 'undefined' && CONTENT.cvDownload) {
     const option = CONTENT.cvDownload.options.find(o => o.id === type);
     if (option && option.file) {
-      // Create download link
       const a = document.createElement('a');
       a.href = 'cv/' + option.file;
       a.download = option.file;
@@ -85,7 +129,6 @@ function animateMetrics() {
         const cards = entry.target.querySelectorAll('.metric-value');
         cards.forEach(card => {
           const text = card.textContent.trim();
-          // Parse target
           const match = text.match(/^(\$?)(\d+)(.*)/);
           if (match) {
             const prefix = match[1];
@@ -93,9 +136,7 @@ function animateMetrics() {
             const suffix = match[3];
             const duration = 1200;
             const start = performance.now();
-
             card.textContent = prefix + '0' + suffix;
-
             function step(now) {
               const elapsed = now - start;
               const progress = Math.min(elapsed / duration, 1);
@@ -115,14 +156,31 @@ function animateMetrics() {
   if (grid) observer.observe(grid);
 }
 
+// ===== EMAIL OBFUSCATION =====
+function initEmail() {
+  const el = document.getElementById('emailLink');
+  if (!el) return;
+  const u = el.getAttribute('data-u');
+  const d = el.getAttribute('data-d');
+  if (u && d) {
+    const addr = u + '@' + d;
+    el.href = 'mailto:' + addr;
+    el.textContent = addr + ' →';
+  }
+}
+
 // ===== KEYBOARD SHORTCUTS =====
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('cvModal');
+    if (modal && modal.classList.contains('open')) closeModal();
+  }
 });
 
 // ===== INIT =====
 document.addEventListener('DOMContentLoaded', function() {
   initTheme();
+  initEmail();
 
   // Set default speed
   if (typeof CONFIG !== 'undefined' && CONFIG.defaultSpeed) {
