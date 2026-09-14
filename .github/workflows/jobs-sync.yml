@@ -1,0 +1,32 @@
+name: Sync jobs command centre
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: jobs-sync
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch warden page
+        run: curl -sL 'https://script.google.com/macros/s/AKfycbxvMb2mDx2Sl0syvkAyJ7I6JoxcyI_20cwDkS2yRkvInEbj3ea1S208vxsZZjM1BpA/exec' -o /tmp/warden.html
+      - name: Extract user HTML
+        run: node scripts/extract-jobs.js /tmp/warden.html /tmp/jobs-index.html
+      - name: Commit if changed
+        run: |
+          mkdir -p jobs
+          if ! cmp -s /tmp/jobs-index.html jobs/index.html 2>/dev/null; then
+            cp /tmp/jobs-index.html jobs/index.html
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add jobs/index.html
+            git commit -m 'jobs: sync command centre snapshot'
+            git push
+            echo 'updated'
+          else
+            echo 'no change'
+          fi
