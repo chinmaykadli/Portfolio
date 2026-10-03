@@ -1,3 +1,5 @@
+/jobs https://jobs.chinmaykadli.com/ 301!
+/jobs/* https://jobs.chinmaykadli.com/:splat 301!
 /case-study-nn    /case-study-nn.html    200
 /case-study-wtf   /case-study-wtf.html   200
 /case-study-adi   /case-study-adi.html   200
