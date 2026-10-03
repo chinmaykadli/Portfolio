@@ -1,0 +1,23 @@
+[build]
+  ignore = '''
+# Netlify: 0 skips, 1 builds. Fail open if the comparison cannot be verified.
+set -u
+if [ "${SITE_ID:-}" != "88180fa8-3384-47a7-95d8-4038942af0cc" ]; then
+  [ -n "${CACHED_COMMIT_REF:-}" ] && [ -n "${COMMIT_REF:-}" ] || exit 1
+  git diff --quiet "$CACHED_COMMIT_REF" "$COMMIT_REF" .
+  exit $?
+fi
+cd "$(git rev-parse --show-toplevel)" || exit 1
+[[ -n "${CACHED_COMMIT_REF:-}" && -n "${COMMIT_REF:-}" ]] || exit 1
+git cat-file -e "$CACHED_COMMIT_REF^{commit}" 2>/dev/null || exit 1
+git cat-file -e "$COMMIT_REF^{commit}" 2>/dev/null || exit 1
+changed=$(git diff --name-only "$CACHED_COMMIT_REF" "$COMMIT_REF") || exit 1
+[[ -n "$changed" ]] || exit 0
+while IFS= read -r path; do
+  case "$path" in
+    jobs/*|scripts/extract-jobs.js|scripts/update-jobs-snapshot.js|.github/workflows/jobs-sync.yml) ;;
+    *) exit 1 ;;
+  esac
+done <<< "$changed"
+exit 0
+'''
